@@ -31,7 +31,7 @@ class AugustEntityMixin(Entity):
         detail = self._detail
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, self._device_id)},
-            manufacturer=MANUFACTURER,
+            manufacturer=data.brand or MANUFACTURER,
             model=detail.model,
             name=device.device_name,
             sw_version=detail.firmware_version,
